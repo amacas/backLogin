@@ -12,7 +12,17 @@ class Usuario extends Model
     public $timestamps = false;
 
     protected $hidden = [
-        'clave'
+        'clave',
+        'usuario',
+        'nombre',
+        'correo',
+        'apellido',
+        'gender',
+        'telefono',
+        'zipCodigo',
+        'ciudad',
+        'direccion',
+        'estado'
 
     ];
 

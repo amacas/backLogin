@@ -24,3 +24,6 @@ Route::get('usuarios',[UsuarioController::class, 'usuarios'] );
 //importante: en el controlador de usuarios, el metodo usuarios, devuelve un json con todos los usuarios
 //post es un metodo estatico
 Route::post('login',[UsuarioController::class,'login']);
+Route::post('register',[UsuarioController::class,'register']);
+
+
