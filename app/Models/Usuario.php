@@ -22,7 +22,11 @@ class Usuario extends Model
         'zipCodigo',
         'ciudad',
         'direccion',
-        'estado'
+        'estado',
+        'provincia_id',
+        'genero_id'
+
+
 
     ];
 

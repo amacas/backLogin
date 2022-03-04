@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,5 +26,5 @@ Route::get('usuarios',[UsuarioController::class, 'usuarios'] );
 //post es un metodo estatico
 Route::post('login',[UsuarioController::class,'login']);
 Route::post('register',[UsuarioController::class,'register']);
-
-
+Route::get('provincia',[ProvinciaController::class,'listar']);
+Route::get('genero',[GeneroController::class,'genero']);
