@@ -12,7 +12,6 @@ class ProvinciaController extends Controller
         $provincias=Provincia::where('estado','1')->orderBy('provincia')->get();
         $response=[];
 
-
         if($provincias->count()>0){
             $response=[
                 "status"=>true,

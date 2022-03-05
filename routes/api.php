@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\GeneroController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

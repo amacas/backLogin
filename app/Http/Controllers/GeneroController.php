@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GeneroController extends Controller
 {
     //
-    public function generar(){
+    public function genero(){
         $generos=Genero::where('estado','1')->orderBy('genero')->get();
         $response=[];
 

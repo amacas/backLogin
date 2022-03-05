@@ -71,7 +71,6 @@ class UsuarioController extends Controller
 
             $person->nombre = ucfirst($data->name);
             $person->apellido = ucfirst($data->apellido);
-            $person->gender = $data->gender;
             $person->telefono = $data->telefono;
             $person->clave =  Hash::make($data->clave);
             $person->zipCodigo = $data->zipCode;
@@ -80,6 +79,7 @@ class UsuarioController extends Controller
             $person->direccion = $data->direccion;
             $person->usuario = $data->usuario;
             $person->provincia_id = $data->provincia_id;
+            $person->genero_id = $data->genero_id;
             $person->estado = 1;
             $person->save( );
 

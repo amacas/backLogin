@@ -17,7 +17,6 @@ class Usuario extends Model
         'nombre',
         'correo',
         'apellido',
-        'gender',
         'telefono',
         'zipCodigo',
         'ciudad',
@@ -25,9 +24,6 @@ class Usuario extends Model
         'estado',
         'provincia_id',
         'genero_id'
-
-
-
     ];
 
 
