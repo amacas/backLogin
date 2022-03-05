@@ -13,24 +13,29 @@ class UsuarioController extends Controller
     //
     public function login(Request $request)
     {
+   //     header('Access-Control-Allow-Origin: *');   para permitirnos ver la data de origen
+
         //request viene de la solicitud http
        $correo=$request->correo;
        $clave=$request->clave;
 
 
+
          //buscar el usuario en la base de datos
-         $usuario=Usuario::where('correo',$correo)->first();
+         $usuario=Usuario::select('id','rol_id','usuario','clave')->where('correo',$correo)->first();
+      //   dd($usuario);
+
          //first devuelve el primer registro de la consulta
          //where devuelve una coleccion
          //Usuario es el modelo
          if($usuario){
             if (Hash::check($clave, $usuario->clave)) {
-                $response=['status'=> true,'messsage'=> 'acceso permitido','data'=>$usuario];
+                $response=['status'=> true,'message'=> 'acceso permitido','data'=>$usuario];
             }else{
-                $response=['status'=> false,'messsage'=> 'contraseña incorrecta'];
+                $response=['status'=> false,'message'=> 'contraseña incorrecta'];
             }
          }else{
-             $response=['status'=> false,'messsage'=> 'el usuario no existe'];
+             $response=['status'=> false,'message'=> 'el usuario no existe'];
          }
 
         return response()->json($response);
@@ -78,8 +83,9 @@ class UsuarioController extends Controller
             $person->ciudad = $data->ciudad;
             $person->direccion = $data->direccion;
             $person->usuario = $data->usuario;
-            $person->provincia_id = $data->provincia_id;
-            $person->genero_id = $data->genero_id;
+            $person->provincia_id = intval($data->provincia_id);
+            $person->genero_id = intval($data->genero_id);
+            $person->rol_id= intval($data->rol_id);
             $person->estado = 1;
             $person->save( );
 
@@ -92,6 +98,10 @@ class UsuarioController extends Controller
 
         return response()->json($response);
     }
+
+
+
+
 }
 
 

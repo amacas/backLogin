@@ -10,9 +10,13 @@ class Usuario extends Model
     use HasFactory;
     protected $table = 'users';
     public $timestamps = false;
-
+//sirve para no mostrar este campo
     protected $hidden = [
         'clave',
+    ];
+
+    //Array para guardar los datos
+    protected $filleable =[
         'usuario',
         'nombre',
         'correo',
@@ -23,8 +27,9 @@ class Usuario extends Model
         'direccion',
         'estado',
         'provincia_id',
-        'genero_id'
+        'genero_id',
+        'rol_id',
+        'clave'
     ];
-
 
 }

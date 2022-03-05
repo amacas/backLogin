@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\GeneroController;
@@ -29,3 +30,5 @@ Route::post('login',[UsuarioController::class,'login']);
 Route::post('register',[UsuarioController::class,'register']);
 Route::get('provincia',[ProvinciaController::class,'listar']);
 Route::get('genero',[GeneroController::class,'genero']);
+Route::get('rol',[GeneralController::class,'roles']);
+
