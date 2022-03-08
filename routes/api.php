@@ -4,6 +4,7 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\MusicaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +32,12 @@ Route::post('register',[UsuarioController::class,'register']);
 Route::get('provincia',[ProvinciaController::class,'listar']);
 Route::get('genero',[GeneroController::class,'genero']);
 Route::get('rol',[GeneralController::class,'roles']);
+Route::get('year',[GeneralController::class,'years']);
+Route::post('register',[MusicaController::class,'register']);
+Route::get('viewRegister',[MusicaController::class,'view']);
+Route::post('register',[AlbumController::class,'register']);
+Route::get('viewAlbum',[AlbumController::class,'view']);
+
+
+
 
