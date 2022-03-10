@@ -34,9 +34,9 @@ Route::get('genero',[GeneroController::class,'genero']);
 Route::get('rol',[GeneralController::class,'roles']);
 Route::get('year',[GeneralController::class,'years']);
 Route::post('register',[MusicaController::class,'register']);
-Route::get('viewRegister',[MusicaController::class,'view']);
+Route::get('view',[MusicaController::class,'view']);
 Route::post('register',[AlbumController::class,'register']);
-Route::get('viewAlbum',[AlbumController::class,'view']);
+Route::get('view',[AlbumController::class,'view']);
 
 
 
