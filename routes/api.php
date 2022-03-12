@@ -33,10 +33,13 @@ Route::get('provincia',[ProvinciaController::class,'listar']);
 Route::get('genero',[GeneroController::class,'genero']);
 Route::get('rol',[GeneralController::class,'roles']);
 Route::get('year',[GeneralController::class,'years']);
-Route::post('register',[MusicaController::class,'register']);
-Route::get('view',[MusicaController::class,'view']);
-Route::post('register',[AlbumController::class,'register']);
-Route::get('view',[AlbumController::class,'view']);
+Route::get('generSong',[GeneralController::class,'geners_songs']);
+Route::post('musica/create',[MusicaController::class,'register']);
+Route::get('musica/listar',[MusicaController::class,'view']);
+Route::delete('musica/eliminar',[MusicaController::class,'delete']);
+Route::post('album/create',[AlbumController::class,'register']);
+Route::get('album/listar',[AlbumController::class,'view']);
+Route::delete('album/eliminar',[AlbumController::class,'delete']);
 
 
 

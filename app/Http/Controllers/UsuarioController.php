@@ -99,8 +99,14 @@ class UsuarioController extends Controller
         return response()->json($response);
     }
 
-
-
+    public function delete($id){
+        $res = User::find($id)->delete();
+        return response()->json([
+            "status"=>true,
+            "message"=>'se ha eliminado el registro correctamente',
+            "data"=>true
+        ]);
+    }
 
 }
 
