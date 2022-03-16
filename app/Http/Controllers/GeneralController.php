@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Rol;
 use App\Models\Year;
 use Illuminate\Http\Request;
@@ -59,6 +60,26 @@ class GeneralController extends Controller
                 "status"=>true,
                 "message"=>'listado de Genero de Canciones',
                 "data"=>$geners_songs
+            ];
+        }else{
+            $response=[
+                "status"=>false,
+                "message"=>'no existe data',
+                "data"=>false
+            ];
+        }
+        return response()->json($response);
+    }
+
+    public function  albums_songs(){
+        $albums=Album::where('estado','1')->orderBy('name_album')->get();
+        $response=[];
+
+        if($albums->count()>0){
+            $response=[
+                "status"=>true,
+                "message"=>'listado de albums de Canciones',
+                "data"=>$albums
             ];
         }else{
             $response=[

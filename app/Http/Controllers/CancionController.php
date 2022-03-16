@@ -31,7 +31,7 @@ class CancionController extends Controller
 
     public function createMusic(Request  $data){
 
-        $exis_cancion=Cancion::where('musica', $data->name_song)->first();
+        $exis_cancion=Cancion::where('musica', $data->name_song)->where('usuario', $data->usuario)->first();
         //$exis_usuario=Cancion::where('usuario', $data->usuario)->first();
         $response=[];
 

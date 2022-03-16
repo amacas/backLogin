@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CancionController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UsuarioController;
@@ -34,9 +35,10 @@ Route::get('genero',[GeneroController::class,'genero']);
 Route::get('rol',[GeneralController::class,'roles']);
 Route::get('year',[GeneralController::class,'years']);
 Route::get('generSong',[GeneralController::class,'geners_songs']);
-Route::post('musica/create',[MusicaController::class,'register']);
-Route::get('musica/listar',[MusicaController::class,'view']);
-Route::delete('musica/eliminar',[MusicaController::class,'delete']);
+Route::post('musica/create',[CancionController::class,'registerSong']);
+Route::get('name_album',[GeneralController::class,'albums_songs']);
+Route::get('musica/listar',[CancionController::class,'view']);
+Route::delete('musica/eliminar',[CancionController::class,'delete']);
 Route::post('album/create',[AlbumController::class,'register']);
 Route::get('album/listar',[AlbumController::class,'view']);
 Route::delete('album/eliminar',[AlbumController::class,'delete']);
