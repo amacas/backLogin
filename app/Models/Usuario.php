@@ -32,4 +32,8 @@ class Usuario extends Model
         'clave'
     ];
 
+    //Uno a muchos
+    public function cancion(){
+        return $this->hasMany(Cancion::class);
+    }
 }

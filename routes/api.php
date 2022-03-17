@@ -37,7 +37,7 @@ Route::get('year',[GeneralController::class,'years']);
 Route::get('generSong',[GeneralController::class,'geners_songs']);
 Route::post('musica/create',[CancionController::class,'registerSong']);
 Route::get('name_album',[GeneralController::class,'albums_songs']);
-Route::get('musica/listar',[CancionController::class,'view']);
+Route::get('musica/listar/{usuario_id}/{estado}',[CancionController::class,'listarMusica']);
 Route::delete('musica/eliminar',[CancionController::class,'delete']);
 Route::post('album/create',[AlbumController::class,'register']);
 Route::get('album/listar',[AlbumController::class,'view']);
