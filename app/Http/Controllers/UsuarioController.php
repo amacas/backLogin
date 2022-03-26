@@ -10,7 +10,7 @@ use Illuminate\Validation\Rules\Exists;
 
 class UsuarioController extends Controller
 {
-    //
+    //login register
     public function login(Request $request)
     {
    //     header('Access-Control-Allow-Origin: *');   para permitirnos ver la data de origen
@@ -41,6 +41,7 @@ class UsuarioController extends Controller
         return response()->json($response);
     }
 
+     // Usuarios de la tabla usuarios
     public function usuarios()
     {
         $usuarios=Usuario::all();
@@ -49,8 +50,6 @@ class UsuarioController extends Controller
     }
 
     //validar correo y usuario que no se repita
-    //
-
     public function register(Request  $data){
 
         $exis_correo=Usuario::where('correo', $data->correo)->first();
@@ -107,6 +106,8 @@ class UsuarioController extends Controller
             "data"=>true
         ]);
     }
+
+    //usuario controlador
 
 }
 

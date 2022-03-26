@@ -27,10 +27,12 @@ class CancionController extends Controller
         }
         return response()->json($response);
     }
+
+
     public function canciones()
     {
         $canciones=Cancion::all();
-        // trae todos los usuarios de la tabla usuarios
+        // trae todas los canciones de la tabla canciones
         return response()->json($canciones);// devuelve un json con los usuarios
     }
 
